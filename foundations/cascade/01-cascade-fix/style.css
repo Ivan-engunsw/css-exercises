@@ -8,16 +8,24 @@ body {
   font-weight: 800;
 }
 
-.small-para {
-  font-size: 14px;
-  font-weight: 800;
-}
 
 .para {
   font-size: 22px;
 }
 
-.confirm {
+/**
+the small-para class has the same specificity as the para class, but it is defined later in the stylesheet, 
+hence by the cascade rule, the small-para class will override the para class.
+*/
+.small-para {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/**
+the .button.confirm class has a higher specificity than the .button class.
+*/
+.button.confirm {
   background: green;
   color: white;
   font-weight: bold;
@@ -29,14 +37,19 @@ body {
   font-size: 20px;
 }
 
-.child {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  font-size: 14px;
-}
 
 div.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
+}
+
+/**
+the .text .child class has a higher specificity than the div.text class as .text is a class selector and div is a
+type selector.
+*/
+.text .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
 }
